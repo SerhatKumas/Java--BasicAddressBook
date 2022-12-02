@@ -21,6 +21,8 @@ public class User extends Person{
 	public List<Person> getAddressBookList() {
 		return addressBookList;
 	}
-	
+	public void setAddressBookList(List<Person> addressBookList) {
+		this.addressBookList = addressBookList;
+	}
 }
 
