@@ -15,7 +15,7 @@ public class UserController {
 	}
 	
 	public void displayUser(User user) {
-		printUser(user);;
+		printUser(user);
 	}
 	
 	public void displayUserByFullName(FakeDatabase fakeDatabase, String fullName) {
@@ -23,7 +23,7 @@ public class UserController {
 		for(User user: userListOfProgram) if(user.getFullName().equals(fullName)) printUser(user);
 	}
 	
-	void displayUserByPhoneNumber(FakeDatabase fakeDatabase, String phoneNumber) {
+	public void displayUserByPhoneNumber(FakeDatabase fakeDatabase, String phoneNumber) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		for(User user: userListOfProgram) if(user.getPhoneNumber().equals(phoneNumber)) printUser(user);
 	}

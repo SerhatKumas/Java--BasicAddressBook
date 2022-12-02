@@ -21,7 +21,7 @@ public class PhoneBookPersonController {
 		for(Person person : phoneBookList) if(person.getFullName().equals(fullName)) printPerson(person);
 	}
 	
-	void displayPersonByPhoneNumber(User user, String phoneNumber) {
+	public void displayPersonByPhoneNumber(User user, String phoneNumber) {
 		List<Person> phoneBookList = user.getAddressBookList();
 		for(Person person : phoneBookList) if(person.getPhoneNumber().equals(phoneNumber)) printPerson(person);
 	}
