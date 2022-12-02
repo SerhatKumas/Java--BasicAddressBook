@@ -1,36 +1,26 @@
 package FakeDatabasePackage;
 
-import ControllerPackage.UserController;
-
 import java.util.List;
 
-import CharacterPackage.Person;
+import CharacterPackage.User;
 
 public class FakeDatabase {
 
-	List<Person> systemUserList;
-	UserController userController;
+	private List<User> systemUserList;
 	
 	public FakeDatabase() {
 		super();
 		this.systemUserList = null;
-		this.userController = null;
 	}
 	public FakeDatabase(FakeDatabase fakeDatabase) {
 		super();
 		this.systemUserList = fakeDatabase.systemUserList;
-		this.userController = fakeDatabase.userController;
 	}
-	public FakeDatabase(List<Person> systemUserList,UserController userController) {
+	public FakeDatabase(List<User> systemUserList) {
 		super();
-		this.systemUserList = systemUserList;
-		this.userController = userController;	
+		this.systemUserList = systemUserList;	
 	}
-	public List<Person> getSystemUserList() {
+	public List<User> getSystemUserList() {
 		return systemUserList;
 	}
-	public UserController getUserController() {
-		return userController;
-	}
-	
 }
