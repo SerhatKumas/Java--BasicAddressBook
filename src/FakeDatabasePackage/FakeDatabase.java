@@ -23,4 +23,7 @@ public class FakeDatabase {
 	public List<User> getSystemUserList() {
 		return systemUserList;
 	}
+	public void setSystemUserList(List<User> systemUserList) {
+		this.systemUserList = systemUserList;
+	}
 }
