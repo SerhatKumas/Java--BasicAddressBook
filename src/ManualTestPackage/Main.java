@@ -33,7 +33,7 @@ public class Main {
 		
 		userInteraction.displayAllPersonInPhoneBook(userParam);
 		
-		userInteraction.updateUserInTheSystem(userParam, new User("Serhat Kumas1", "12312312312", "New York", "serhat@gmail.com", "Software Engineer", new LinkedList<Person>()));
+		userInteraction.updateUserInTheSystem(userParam, new User("Serhat Kumas1", "12312312312", "New York", "serhat@gmail.com", "Software Engineer", userParam.getAddressBookList()));
 		
 		userInteraction.displayAllUserInSystem();
 		
