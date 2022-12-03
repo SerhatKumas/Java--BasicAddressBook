@@ -37,7 +37,7 @@ public class UserController {
 	public void deleteUserByFullName(FakeDatabase fakeDatabase, String fullName) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		User deletingUser = null;
-		for(User user: userListOfProgram) if(user.getFullName().equals(fullName)) printUser(user);
+		for(User user: userListOfProgram) if(user.getFullName().equals(fullName)) deletingUser=user;
 		boolean isRemoved = userListOfProgram.remove(deletingUser);
 		if(isRemoved) fakeDatabase.setSystemUserList(userListOfProgram);
 	}
@@ -45,7 +45,7 @@ public class UserController {
 	public void deleteUserByPhoneNumber(FakeDatabase fakeDatabase, String phoneNumber) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		User deletingUser = null;
-		for(User user: userListOfProgram) if(user.getPhoneNumber().equals(phoneNumber)) printUser(user);
+		for(User user: userListOfProgram) if(user.getPhoneNumber().equals(phoneNumber)) deletingUser=user;
 		boolean isRemoved = userListOfProgram.remove(deletingUser);
 		if(isRemoved) fakeDatabase.setSystemUserList(userListOfProgram);
 	}
@@ -121,7 +121,7 @@ public class UserController {
 						+ "Address : " + user.getAddress() + "\n"
 								+ "Mail : " + user.getMail() + "\n"
 										+ "Job Title : " + user.getJobTitle() + "\n"
-												+ "Number of person, user has in their phone book : " + user.getAddressBookList().size());
+												+ "Number of person, user has in their phone book : " + user.getAddressBookList().size() + "\n");
 	}
 	 
 }

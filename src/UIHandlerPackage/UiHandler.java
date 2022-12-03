@@ -73,12 +73,12 @@ public class UiHandler {
 		personController.updatePersonByPhoneNumber(user, phoneNumber, personUPerson);
 	}
 	
-	public void getPersonInThePhoneBookByFullName(User user,String fullName) {
-		personController.getPersonByFullName(user, fullName);
+	public Person getPersonInThePhoneBookByFullName(User user,String fullName) {
+		return personController.getPersonByFullName(user, fullName);
 	}
 	
-	public void getPersonInThePhoneBookByPhoneNumber(User user,String phoneNumber) {
-		personController.getPersonByFullName(user, phoneNumber);
+	public Person  getPersonInThePhoneBookByPhoneNumber(User user,String phoneNumber) {
+		return personController.getPersonByFullName(user, phoneNumber);
 	}
 	
 	public void addNewUserToSystem(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
@@ -126,12 +126,12 @@ public class UiHandler {
 		userController.updateUserByPhoneNumber(this.fakeDatabase, phoneNumber, userUpdated);
 	}
 	
-	public void getUserInTheSystemByFullName(String fullName) {
-		userController.getUserByPhoneNumber(this.fakeDatabase, fullName);
+	public User getUserInTheSystemByFullName(String fullName) {
+		return userController.getUserByFullName(this.fakeDatabase, fullName);
 	}
 	
-	public void getUserInTheSystemByPhoneNumber(String phoneNumber) {
-		userController.getUserByPhoneNumber(this.fakeDatabase, phoneNumber);
+	public User  getUserInTheSystemByPhoneNumber(String phoneNumber) {
+		return userController.getUserByPhoneNumber(this.fakeDatabase, phoneNumber);
 	}
 	
 }

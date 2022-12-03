@@ -90,16 +90,16 @@ public class PhoneBookPersonController {
 	
 	public Person getPersonByFullName(User user,String personFullName) {
 		List<Person> phoneBookList = user.getAddressBookList();
-		Person returninPerson = null;
-		for(Person person : phoneBookList) if(person.getFullName().equals(personFullName)) returninPerson=person;
-		return returninPerson;
+		Person returningPerson = null;
+		for(Person person : phoneBookList) if(person.getFullName().equals(personFullName)) returningPerson=person;
+		return returningPerson;
 	}
 	
 	public Person  getPersonByPhoneNumber(User user,String personPhoneNumber) {
 		List<Person> phoneBookList = user.getAddressBookList();
-		Person returninPerson = null;
-		for(Person person : phoneBookList) if(person.getPhoneNumber().equals(personPhoneNumber)) returninPerson=person;
-		return returninPerson;
+		Person returningPerson = null;
+		for(Person person : phoneBookList) if(person.getPhoneNumber().equals(personPhoneNumber)) returningPerson=person;
+		return returningPerson;
 	}
 	
 	public Person createPerson(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
