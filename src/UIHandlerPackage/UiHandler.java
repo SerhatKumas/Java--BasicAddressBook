@@ -4,30 +4,35 @@ import ControllerPackage.*;
 import FakeDatabasePackage.FakeDatabase;
 
 public class UiHandler {
+	
+	//ALL UI METHODS ARE GATHERED AROUND IN ONE CLASS
 
 	private PhoneBookPersonController personController;
 	private UserController userController;
 	private FakeDatabase fakeDatabase;
 	
-	
+	//empty constructor
 	public UiHandler() {
 		this.personController = null;
 		this.userController = null;
 		this.fakeDatabase = null;
 	}
 	
+	//Full parameter constructor
 	public UiHandler(PhoneBookPersonController personController,UserController userController, FakeDatabase fakeDatabase) {
 		this.personController = personController;
 		this.userController = userController;
 		this.fakeDatabase = fakeDatabase;
 	}
 	
+	//Copy constructor
 	public UiHandler(UiHandler uiHandler) {
 		this.personController = uiHandler.personController;
 		this.userController = uiHandler.userController;
 		this.fakeDatabase = uiHandler.fakeDatabase;
 	}
 	
+	//Phone Book Person Methods
 	public void addNewPersonToPhoneBook(String fullName, String phoneNumber, String address, String mail, String jobTitle, User user) {
 		Person person = personController.createPerson(fullName, phoneNumber, address, mail, jobTitle);
 		personController.addPersonToList(user, person);
@@ -80,7 +85,9 @@ public class UiHandler {
 	public Person  getPersonInThePhoneBookByPhoneNumber(User user,String phoneNumber) {
 		return personController.getPersonByFullName(user, phoneNumber);
 	}
+	//Phone Book Person Methods
 	
+	//System User Methods
 	public void addNewUserToSystem(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
 		User newUser = userController.createUser(fullName, phoneNumber, address, mail, jobTitle);
 		userController.addUserToList(this.fakeDatabase, newUser);
@@ -133,7 +140,7 @@ public class UiHandler {
 	public User  getUserInTheSystemByPhoneNumber(String phoneNumber) {
 		return userController.getUserByPhoneNumber(this.fakeDatabase, phoneNumber);
 	}
-	
+	//System User Methods
 }
 
 

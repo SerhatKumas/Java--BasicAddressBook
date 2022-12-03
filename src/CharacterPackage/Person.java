@@ -8,6 +8,7 @@ public class Person {
 	private String mail;
 	private String jobTitle;
 	
+	//empty constructor
 	public Person() {
 		super();
 		this.fullName = "";
@@ -18,6 +19,7 @@ public class Person {
 	}
 
 	
+	//Full parameter constructor
 	public Person(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
 		super();
 		this.fullName = fullName;
@@ -27,6 +29,7 @@ public class Person {
 		this.jobTitle = jobTitle;
 	}
 	
+	//Copy constructor
 	public Person(Person person) {
 		super();
 		this.fullName = person.fullName;
@@ -37,6 +40,7 @@ public class Person {
 	}
 
 
+	//Setter and getter methods
 	public String getFullName() {
 		return fullName;
 	}

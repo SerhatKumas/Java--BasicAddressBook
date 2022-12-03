@@ -6,7 +6,9 @@ import CharacterPackage.*;
 
 public class PhoneBookPersonController {
 
+	//ALL OF THE PHONE BOOK PERSON MANIPULATION METHODS
 
+	//Display Methods
 	public void displayPerson(Person person) {
 		printPerson(person);
 	}
@@ -25,7 +27,9 @@ public class PhoneBookPersonController {
 		List<Person> phoneBookList = user.getAddressBookList();
 		for(Person person : phoneBookList) if(person.getPhoneNumber().equals(phoneNumber)) printPerson(person);
 	}
+	//Display Methods
 	
+	//Delete Methods
 	public void deletePerson(User user,Person person) {
 		List<Person> phoneBookList = user.getAddressBookList();
 		boolean isRemoved = phoneBookList.remove(person);
@@ -47,7 +51,9 @@ public class PhoneBookPersonController {
 		boolean isRemoved = phoneBookList.remove(deletedPerson);
 		if(isRemoved) user.setAddressBookList(phoneBookList);
 	}
+	//Delete Methods
 	
+	//Update Methods
 	public void updatePerson(User user,Person personOld, Person personUpdated) {
 		List<Person> phoneBookList = user.getAddressBookList();
 		if(phoneBookList.contains(personOld)) {
@@ -87,7 +93,9 @@ public class PhoneBookPersonController {
 			}
 		}
 	}
+	//Update Methods
 	
+	//Get Methods
 	public Person getPersonByFullName(User user,String personFullName) {
 		List<Person> phoneBookList = user.getAddressBookList();
 		Person returningPerson = null;
@@ -101,19 +109,23 @@ public class PhoneBookPersonController {
 		for(Person person : phoneBookList) if(person.getPhoneNumber().equals(personPhoneNumber)) returningPerson=person;
 		return returningPerson;
 	}
+	//Get Methods
 	
+	//Create Methods for adding new person to phone book
 	public Person createPerson(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
 		Person newPerson = new Person(fullName, phoneNumber, address, mail, jobTitle);
 		return newPerson;
 		
 	}
 	
+	//Adds person to user's phone book
 	public void addPersonToList(User user,Person person) {
 		List<Person> phoneBookList = user.getAddressBookList();
 		phoneBookList.add(person);
 		user.setAddressBookList(phoneBookList);
 	}
 	
+	//Auxiliary method for printing out person object
 	private void printPerson(Person person) {
 		System.out.println("Full Name : " + person.getFullName() + "\n"
 				+ "Phone Number : " + person.getPhoneNumber() + "\n"

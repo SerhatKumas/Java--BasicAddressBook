@@ -9,6 +9,9 @@ import FakeDatabasePackage.FakeDatabase;
 
 public class UserController {
 
+	//SYSTEM USER MANIPULATION METHODS
+	
+	//Display methods
 	public void displayAllUsers(FakeDatabase fakeDatabase) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		for(User user: userListOfProgram) printUser(user);
@@ -27,7 +30,9 @@ public class UserController {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		for(User user: userListOfProgram) if(user.getPhoneNumber().equals(phoneNumber)) printUser(user);
 	}
+	//Display methods
 	
+	//Delete methods
 	public void deleteUser(FakeDatabase fakeDatabase,User user) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		boolean isRemoved = userListOfProgram.remove(user);
@@ -49,7 +54,9 @@ public class UserController {
 		boolean isRemoved = userListOfProgram.remove(deletingUser);
 		if(isRemoved) fakeDatabase.setSystemUserList(userListOfProgram);
 	}
+	//Delete methods
 	
+	//Update methods
 	public void updateUser(FakeDatabase fakeDatabase,User userOld, User userUpdated) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		if(userListOfProgram.contains(userOld)) {
@@ -89,7 +96,9 @@ public class UserController {
 			}
 		}
 	}
+	//Update methods
 	
+	//Get methods
 	public User getUserByFullName(FakeDatabase fakeDatabase,String userFullName) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		User returninUser = null;
@@ -103,18 +112,22 @@ public class UserController {
 		for(User user : userListOfProgram) if(user.getPhoneNumber().equals(userPhoneNumber)) returninUser=user;
 		return returninUser;
 	}
+	//Get methods
 	
+	//Create method for system user
 	public User createUser(String fullName, String phoneNumber, String address, String mail, String jobTitle) {
 		User newUser = new User(fullName, phoneNumber, address, mail, jobTitle, new LinkedList<Person>());
 		return newUser;
 	}
 	
+	//Adds system user to fake database
 	public void addUserToList(FakeDatabase fakeDatabase,User user) {
 		List<User> userListOfProgram = fakeDatabase.getSystemUserList();
 		userListOfProgram.add(user);
 		fakeDatabase.setSystemUserList(userListOfProgram);
 	}
 	
+	//Auxiliary method for printing out system user
 	private void printUser(User user) {
 		System.out.println("Full Name : " + user.getFullName() + "\n"
 				+ "Phone Number : " + user.getPhoneNumber() + "\n"

@@ -6,6 +6,8 @@ import CharacterPackage.User;
 
 public class FakeDatabase {
 
+	//USED AS A DATABASE
+	
 	private List<User> systemUserList;
 	
 	public FakeDatabase() {
